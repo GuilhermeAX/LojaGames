@@ -15,6 +15,10 @@ public class Produto {
     @JsonIgnoreProperties("produtos")
     private Categoria categoria;
 
+    @ManyToOne
+    @JsonIgnoreProperties("produtos")
+    private Usuario usuario;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -56,5 +60,13 @@ public class Produto {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
